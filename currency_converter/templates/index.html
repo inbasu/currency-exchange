@@ -1,0 +1,23 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+<div id="background">
+    <div id='conteiner' class="container text-center border border-dark rounded" >
+        <h3>...Currency exchange...</h3>
+        <form id='forms' action="/" method="POST">   
+            <div class="row row-cols-3">
+            {% csrf_token %}
+                <div class="col"><p>Value:</p>{{ form.value }}</div>
+                <div class="col"><p>From:</p>{{ form.fromCur }}</div>
+                <div class="col"><p>To:</p>{{ form.toCur }}</div>
+            </div>
+            <button id='button' type="submit" class="btn btn-secondary" >Calculate</button>
+        </form>
+        <div id='resultplace' class="container text-center border border-dark rounded" ><h4 id="result" class="font-monospace"> </h4></div>
+    </div>
+</div>
+<script src="{% static 'index.js' %}"></script>
+
+{% endblock content %}
