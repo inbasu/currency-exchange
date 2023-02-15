@@ -1,6 +1,7 @@
 const curForms = document.getElementById('forms')
 const result = document.getElementById('result')
 
+
 curForms.addEventListener("submit", handleFormSubmit)
 
 function handleFormSubmit(event) {
@@ -15,4 +16,13 @@ function handleFormSubmit(event) {
         result.innerText = xhr.response['result']
     }
     xhr.send(formData)
+    swap()
 }
+
+function swap() {
+    let from = document.querySelector('#fromCur').value;
+    let to = document.querySelector('#toCur').value;
+    document.querySelector('#fromCur').value = to;
+    document.querySelector('#toCur').value = from;
+}
+

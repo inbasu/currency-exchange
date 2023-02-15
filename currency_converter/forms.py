@@ -20,6 +20,7 @@ class CurrencyForm(forms.Form):
         widget=forms.Select(
             choices=symbols,
             attrs={
+                "id": "fromCur",
                 "class": "form-select",
                 "required": "true",
             },
@@ -30,6 +31,7 @@ class CurrencyForm(forms.Form):
         widget=forms.Select(
             choices=symbols,
             attrs={
+                "id": "toCur",
                 "class": "form-select",
                 "required": "true",
             },

@@ -22,6 +22,8 @@
 #resultplace {
     height: 50px;
     width: 130px;
+    display: grid;
+    place-items: center;
 }
 #button {
     width: 130px;
